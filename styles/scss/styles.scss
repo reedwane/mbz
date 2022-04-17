@@ -1,0 +1,41 @@
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@700&family=Inter:wght@400;700&display=swap");
+@import "variables";
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  overflow: hidden;
+}
+
+header {
+  height: 3.6em;
+  padding: 1em;
+  background-color: $white;
+  display: flex;
+  flex-wrap: wrap;
+  align-items: center;
+  justify-content: space-between;
+  color: $text-dark;
+
+  .logo-container,
+  h4 {
+    display: inline-block;
+    height: 100%;
+  }
+
+  h4 {
+    position: relative;
+    top: 10%;
+    font-size: 0.5rem;
+    font-family: $text-family;
+  }
+
+  img {
+    height: 100%;
+  }
+
+  ul {
+    display: none;
+  }
+}
