@@ -1,15 +1,38 @@
-@import url("https://fonts.googleapis.com/css2?family=Hind:wght@700&family=Inter:wght@400;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@700&family=Inter:wght@400;500;700&display=swap");
 @import "variables";
+@import "mixins";
 
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
-  overflow: hidden;
 }
+
+body {
+  width: 100%;
+  font-family: $text-family;
+  background-color: $faint-white;
+}
+
+h2,
+h3 {
+  font-family: $header-family;
+}
+
+img,
+input {
+  max-width: 100%;
+}
+
+////////////////////////////////////////////
+////////////////////////////////////////////
+// Header styles start
+////////////////////////////////////////////
+////////////////////////////////////////////
 
 header {
   height: 3.6em;
+  width: 100%;
   padding: 1em;
   background-color: $white;
   display: flex;
@@ -26,12 +49,12 @@ header {
 
   h4 {
     position: relative;
-    top: 10%;
+    top: -10%;
     font-size: 0.5rem;
     font-family: $text-family;
   }
 
-  img {
+  .logo {
     height: 100%;
   }
 
@@ -39,3 +62,412 @@ header {
     display: none;
   }
 }
+
+////////////////////////////////////////////
+////////////////////////////////////////////
+// Header styles end
+////////////////////////////////////////////
+////////////////////////////////////////////
+
+////////////////////////////////////////////
+////////////////////////////////////////////
+// carousel styles start
+////////////////////////////////////////////
+////////////////////////////////////////////
+.fade {
+  display: none;
+}
+
+.carousel {
+  height: 37.5em;
+
+  h3 {
+    font-family: $header-family;
+    font-weight: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .carousel-text {
+    color: $white;
+    display: inline-block;
+    position: relative;
+    top: -25em;
+    text-align: center;
+    font-family: $text-family;
+    padding: 5%;
+    line-height: 1.2em;
+  }
+
+  img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+  }
+
+  .carousel-button {
+    @include button;
+  }
+
+  .donate-button {
+    position: absolute;
+    top: 4em;
+    right: 0;
+
+    @include button;
+    writing-mode: vertical-lr;
+    transform: scale(-1, -1);
+    width: 3em;
+    height: 20%;
+    color: $white;
+
+    img {
+      height: 20%;
+      transform: scaleY(-1);
+    }
+  }
+}
+
+.twoSlide {
+  color: $text-dark;
+}
+
+////////////////////////////////////////////
+////////////////////////////////////////////
+// carousel styles end
+////////////////////////////////////////////
+////////////////////////////////////////////
+
+////////////////////////////////////////////
+////////////////////////////////////////////
+// intro section styles start
+////////////////////////////////////////////
+////////////////////////////////////////////
+
+.intro {
+  margin-top: 2em;
+  padding: 6.5%;
+
+  img {
+    border-radius: 12px;
+  }
+
+  h2 {
+    font-size: 1.5rem;
+    font-family: $header-family;
+    display: inline-block;
+    position: relative;
+    text-transform: uppercase;
+    margin-top: 1.5rem;
+
+    &::after {
+      content: "";
+      width: 4rem;
+      background-color: $primary-color;
+      height: 2px;
+      position: absolute;
+      bottom: 0.5rem;
+      left: 0;
+    }
+  }
+
+  p {
+    margin-top: 0;
+    font-family: $text-family;
+    margin: 1rem 0 1rem;
+    font-size: 1rem;
+  }
+
+  a {
+    text-decoration: none;
+    display: inline-block;
+    text-align: center;
+    font-weight: bold;
+    font-size: 0.8rem;
+    padding: 0.8em;
+    width: 50%;
+    margin-bottom: 3em;
+    border-radius: 4px;
+    color: $primary-color;
+    border: 1px solid $primary-color;
+  }
+}
+////////////////////////////////////////////
+////////////////////////////////////////////
+// intro section styles end
+////////////////////////////////////////////
+////////////////////////////////////////////
+
+////////////////////////////////////////////
+////////////////////////////////////////////
+// learn more section styles start
+////////////////////////////////////////////
+////////////////////////////////////////////
+
+.learn-more {
+  background-color: $light-primary-color;
+  text-align: center;
+  padding: 1em;
+
+  section {
+    background-color: $gray-background;
+    margin-top: 2em;
+    padding: 1.5em;
+    color: $white;
+    border-radius: 8px;
+  }
+
+  .icon-container {
+    display: inline-block;
+    margin-top: 1em;
+    padding: 0.8em;
+    width: 3.5em;
+    border-radius: 50%;
+    background-color: $white;
+  }
+
+  img {
+    margin-top: 0.2em;
+  }
+
+  h3 {
+    font-size: 1.3rem;
+    text-transform: uppercase;
+    margin-top: 1rem;
+    font-family: $header-family;
+  }
+
+  p {
+    font-size: 0.8rem;
+    margin: 0.2rem auto 2rem;
+    line-height: 150%;
+    padding: 0 8%;
+  }
+
+  .learn-link {
+    display: inline-block;
+    text-decoration: none;
+    width: 80%;
+    font-size: 0.9rem;
+    padding: 1rem;
+    margin-bottom: 0.5rem;
+    background-color: $primary-color;
+    color: $white;
+    border-radius: 4px;
+    box-shadow: 0px 10px 10px $button-shadow;
+  }
+}
+////////////////////////////////////////////
+////////////////////////////////////////////
+// learn more section styles end
+////////////////////////////////////////////
+////////////////////////////////////////////
+
+////////////////////////////////////////////
+////////////////////////////////////////////
+// events section styles start
+////////////////////////////////////////////
+////////////////////////////////////////////
+.events {
+  @include section;
+
+  .event-date {
+    display: inline-block;
+    width: 30%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    color: $white;
+    line-height: 25px;
+    padding: 1rem;
+    font-size: 0.7rem;
+    background: linear-gradient(
+      132.84deg,
+      rgba(255, 255, 255, 0.4) 0%,
+      rgba(255, 255, 255, 0.05) 100%
+    );
+  }
+
+  h3 {
+    font-family: $header-family;
+    color: $primary-color;
+    margin: 1.2rem auto 0.6rem;
+  }
+
+  p {
+    font-weight: bold;
+    font-size: 0.9rem;
+    margin-bottom: 0.3rem;
+
+    span {
+      font-weight: normal;
+    }
+  }
+}
+////////////////////////////////////////////
+////////////////////////////////////////////
+// events section styles end
+////////////////////////////////////////////
+////////////////////////////////////////////
+
+////////////////////////////////////////////
+////////////////////////////////////////////
+// news section styles start
+////////////////////////////////////////////
+////////////////////////////////////////////
+.news {
+  @include section;
+  background-color: $faint-white;
+  text-align: left;
+
+  span,
+  h3,
+  p,
+  a {
+    padding: 0 10%;
+  }
+
+  .date {
+    display: inline-block;
+    font-size: 0.8rem;
+  }
+
+  h3 {
+    line-height: 120%;
+    margin: 4% auto 4%;
+  }
+
+  p {
+    font-size: 0.8rem;
+  }
+
+  a {
+    display: inline-block;
+    margin-top: 1.4rem;
+    color: $primary-color;
+    font-size: 0.9rem;
+    font-weight: bold;
+
+    &::after {
+      content: "\2192";
+      margin-left: 0.5rem;
+    }
+  }
+}
+
+////////////////////////////////////////////
+////////////////////////////////////////////
+// news section styles end
+////////////////////////////////////////////
+////////////////////////////////////////////
+
+////////////////////////////////////////////
+////////////////////////////////////////////
+// footer styles start
+////////////////////////////////////////////
+////////////////////////////////////////////
+footer {
+  background-color: $light-primary-color;
+  padding: 1.5rem 1.5rem 0;
+}
+h2 {
+  margin: 1.2rem auto;
+}
+
+.contact {
+  form {
+    background-color: $white;
+    border-radius: 1rem;
+    padding: 1rem;
+    margin-bottom: 2rem;
+
+    input {
+      display: block;
+      width: 100%;
+      height: 2.5rem;
+      outline: none;
+      border: 1px solid $primary-color;
+      border-radius: 5px;
+      margin: 0.5rem 0 1rem;
+    }
+
+    button {
+      border: none;
+      @include button;
+      width: 100%;
+      margin: 0;
+      color: white;
+    }
+  }
+}
+
+.footer-links {
+  margin-bottom: 2rem;
+
+  ul {
+    list-style-type: none;
+    font-weight: 500;
+    font-size: 0.8rem;
+
+    display: grid;
+    grid-template-columns: auto auto auto;
+  }
+
+  li {
+    margin-bottom: 1rem;
+  }
+}
+
+.socials {
+  p {
+    font-size: 0.8rem;
+  }
+
+  a {
+    display: inline-block;
+    margin: 1rem 0.5rem;
+  }
+}
+
+.other-contacts {
+  a {
+    display: block;
+    text-decoration: none;
+    color: black;
+  }
+  img {
+    display: inline-block;
+    width: 2rem;
+    height: 2rem;
+    object-fit: contain;
+    padding: 0.5rem;
+    border: 1px solid $primary-color;
+    border-radius: 50%;
+  }
+
+  address,
+  span {
+    position: relative;
+    top: -0.5rem;
+    display: inline-block;
+    width: 80%;
+    line-height: 150%;
+    margin-left: 1rem;
+    font-size: 0.8rem;
+    font-weight: 500;
+  }
+}
+
+.attribution {
+  text-align: center;
+  background-color: $white;
+  font-size: 0.7rem;
+  padding: 1rem;
+  position: relative;
+  left: 0;
+  width: 100%;
+}
+////////////////////////////////////////////
+////////////////////////////////////////////
+// footer styles end
+////////////////////////////////////////////
+////////////////////////////////////////////
