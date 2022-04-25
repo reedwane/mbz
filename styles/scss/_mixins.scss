@@ -10,6 +10,69 @@
   box-shadow: 0px 10px 10px $button-shadow;
 }
 
+@mixin carouselCard {
+  @keyframes fade {
+    from {
+      opacity: 0.4;
+    }
+    to {
+      opacity: 1;
+    }
+  }
+
+  animation-name: fade;
+  animation-duration: 1.5s;
+  height: 37.5em;
+  color: $white;
+
+  h3 {
+    font-family: $header-family;
+    font-weight: 2rem;
+    margin-bottom: 1rem;
+  }
+
+  .carousel-text {
+    display: inline-block;
+    position: relative;
+    top: -23em;
+    text-align: center;
+    font-family: $text-family;
+    padding: 5%;
+    line-height: 1.2em;
+  }
+
+  img {
+    width: 100%;
+    height: 600px;
+    object-fit: cover;
+  }
+
+  .carousel-button {
+    @include button;
+  }
+
+  .donate-button {
+    position: absolute;
+    top: 4em;
+    right: 0;
+
+    @include button;
+    text-align: center;
+    writing-mode: vertical-lr;
+    transform: scale(-1, -1);
+    width: 3em;
+    height: 23%;
+    color: $white;
+
+    img {
+      height: 18%;
+      position: relative;
+      top: -0.5rem;
+      transform: rotate(90deg);
+    }
+  }
+}
+
 @mixin section {
   padding: 0 10% 5%;
   background-color: $light-white;
