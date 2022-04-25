@@ -361,6 +361,7 @@ header .closed {
 }
 .events img {
   border-radius: 24px 24px 0 0;
+  width: 100%;
   min-height: 209px;
 }
 .events .event-date {
@@ -414,6 +415,7 @@ header .closed {
 }
 .news img {
   border-radius: 24px 24px 0 0;
+  width: 100%;
   min-height: 209px;
 }
 .news span,
