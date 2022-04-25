@@ -1,5 +1,5 @@
 @charset "UTF-8";
-@import url("https://fonts.googleapis.com/css2?family=Hind:wght@700&family=Inter:wght@400;500;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Hind:wght@700&family=Inter:wght@300;400;500;700&display=swap");
 * {
   margin: 0;
   padding: 0;
@@ -32,6 +32,9 @@ header {
   align-items: center;
   justify-content: space-between;
   color: #2a2a2a;
+  position: fixed;
+  top: 0;
+  z-index: 3;
 }
 header .logo-container,
 header h4 {
@@ -47,7 +50,49 @@ header h4 {
 header .logo {
   height: 100%;
 }
-header ul {
+header .nav-list {
+  display: block;
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  top: 3.6em;
+  left: 0;
+  z-index: 2;
+  background-color: #fefefe;
+}
+header .nav-list li {
+  list-style-type: none;
+  position: relative;
+  margin: 1rem;
+}
+header .nav-list a {
+  text-decoration: none;
+  color: #2a2a2a;
+  font-weight: 700;
+  font-size: 1rem;
+  display: inline-block;
+}
+header .nav-list a::after {
+  content: ">";
+  display: inline-block;
+  position: absolute;
+  right: 30%;
+  transform: rotate(90deg);
+}
+header .nav-list > li:last-of-type a::after {
+  content: "";
+}
+header .nav-list > ul {
+  display: none;
+  width: 70%;
+  margin: 0 auto;
+  padding: 5%;
+  background-color: rgba(213, 235, 225, 0.7);
+}
+header .nav-list > ul > li a::after {
+  content: "";
+}
+header .closed {
   display: none;
 }
 
@@ -56,29 +101,58 @@ header ul {
 }
 
 .carousel {
-  height: 37.5em;
+  position: relative;
 }
-.carousel h3 {
+
+.oneSlide,
+.twoSlide,
+.threeSlide,
+.fourSlide {
+  animation-name: fade;
+  animation-duration: 1.5s;
+  height: 37.5em;
+  color: #fefefe;
+}
+@keyframes fade {
+  from {
+    opacity: 0.4;
+  }
+  to {
+    opacity: 1;
+  }
+}
+.oneSlide h3,
+.twoSlide h3,
+.threeSlide h3,
+.fourSlide h3 {
   font-family: "Hind", sans-serif;
   font-weight: 2rem;
   margin-bottom: 1rem;
 }
-.carousel .carousel-text {
-  color: #fefefe;
+.oneSlide .carousel-text,
+.twoSlide .carousel-text,
+.threeSlide .carousel-text,
+.fourSlide .carousel-text {
   display: inline-block;
   position: relative;
-  top: -25em;
+  top: -23em;
   text-align: center;
   font-family: "Inter", sans-serif;
   padding: 5%;
   line-height: 1.2em;
 }
-.carousel img {
+.oneSlide img,
+.twoSlide img,
+.threeSlide img,
+.fourSlide img {
   width: 100%;
   height: 600px;
   object-fit: cover;
 }
-.carousel .carousel-button {
+.oneSlide .carousel-button,
+.twoSlide .carousel-button,
+.threeSlide .carousel-button,
+.fourSlide .carousel-button {
   display: inline-block;
   width: 50%;
   height: 3em;
@@ -89,7 +163,10 @@ header ul {
   font-family: "Inter", sans-serif;
   box-shadow: 0px 10px 10px rgba(19, 139, 83, 0.25);
 }
-.carousel .donate-button {
+.oneSlide .donate-button,
+.twoSlide .donate-button,
+.threeSlide .donate-button,
+.fourSlide .donate-button {
   position: absolute;
   top: 4em;
   right: 0;
@@ -102,27 +179,80 @@ header ul {
   background-color: #138951;
   font-family: "Inter", sans-serif;
   box-shadow: 0px 10px 10px rgba(19, 139, 83, 0.25);
+  text-align: center;
   writing-mode: vertical-lr;
   transform: scale(-1, -1);
   width: 3em;
-  height: 20%;
+  height: 23%;
   color: #fefefe;
 }
-.carousel .donate-button img {
-  height: 20%;
-  transform: scaleY(-1);
+.oneSlide .donate-button img,
+.twoSlide .donate-button img,
+.threeSlide .donate-button img,
+.fourSlide .donate-button img {
+  height: 18%;
+  position: relative;
+  top: -0.5rem;
+  transform: rotate(90deg);
 }
 
 .twoSlide {
   color: #2a2a2a;
 }
+.twoSlide .carousel-button {
+  color: #fefefe;
+}
+
+.threeSlide {
+  text-shadow: 2px 2px #2a2a2a;
+}
+
+.fourSlide .carousel-text {
+  background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), rgba(19, 137, 81, 0.4);
+}
+.fourSlide .ayah {
+  margin: 1.4rem auto 1.4rem;
+  text-align: right;
+  line-height: 130%;
+  font-weight: bold;
+  font-family: Calibri, "Trebuchet MS", sans-serif;
+}
+.fourSlide .ayah-translation {
+  margin: 0 0 1.8rem;
+}
+.fourSlide .ayah-ref {
+  font-weight: 300;
+}
+.fourSlide .donate-button {
+  height: 60%;
+  top: -14em;
+}
+
+.dots {
+  width: 100%;
+  text-align: center;
+  position: absolute;
+  bottom: 3.2em;
+}
+.dots .dot {
+  display: inline-block;
+  width: 0.4rem;
+  height: 0.4rem;
+  border-radius: 50%;
+  background-color: #fefefe;
+  box-shadow: 0px 0px 10px #2a2a2a;
+}
+.dots .active {
+  width: 2rem;
+  border-radius: 30px;
+}
 
 .intro {
-  margin-top: 2em;
   padding: 6.5%;
 }
 .intro img {
   border-radius: 12px;
+  margin-top: 2em;
 }
 .intro h2 {
   font-size: 1.5rem;
@@ -134,7 +264,7 @@ header ul {
 }
 .intro h2::after {
   content: "";
-  width: 4rem;
+  width: 3rem;
   background-color: #138951;
   height: 2px;
   position: absolute;
@@ -142,9 +272,8 @@ header ul {
   left: 0;
 }
 .intro p {
-  margin-top: 0;
   font-family: "Inter", sans-serif;
-  margin: 1rem 0 1rem;
+  margin: 0 0 2.7rem;
   font-size: 1rem;
 }
 .intro a {
@@ -232,6 +361,7 @@ header ul {
 }
 .events img {
   border-radius: 24px 24px 0 0;
+  width: 100%;
   min-height: 209px;
 }
 .events .event-date {
@@ -285,6 +415,7 @@ header ul {
 }
 .news img {
   border-radius: 24px 24px 0 0;
+  width: 100%;
   min-height: 209px;
 }
 .news span,
@@ -318,13 +449,16 @@ header ul {
 
 footer {
   background-color: rgba(213, 235, 225, 0.7);
-  padding: 1.5rem 1.5rem 0;
+  padding: 1.5rem 0 0;
 }
 
 h2 {
   margin: 1.2rem auto;
 }
 
+.contact {
+  margin: 0 1.5rem 0;
+}
 .contact form {
   background-color: #fefefe;
   border-radius: 1rem;
@@ -357,6 +491,7 @@ h2 {
 }
 
 .footer-links {
+  margin: 0 1.5rem 2rem;
   margin-bottom: 2rem;
 }
 .footer-links ul {
@@ -370,6 +505,9 @@ h2 {
   margin-bottom: 1rem;
 }
 
+.socials {
+  margin: 0 1.5rem 0;
+}
 .socials p {
   font-size: 0.8rem;
 }
@@ -402,6 +540,7 @@ h2 {
   margin-left: 1rem;
   font-size: 0.8rem;
   font-weight: 500;
+  font-style: normal;
 }
 
 .attribution {
@@ -409,9 +548,6 @@ h2 {
   background-color: #fefefe;
   font-size: 0.7rem;
   padding: 1rem;
-  position: relative;
-  left: 0;
-  width: 100%;
 }
 
 /*# sourceMappingURL=styles.css.map */
