@@ -1,3 +1,9 @@
+@mixin mq($width) {
+  @media screen and (min-width: $width) {
+    @content;
+  }
+}
+
 @mixin button {
   display: inline-block;
   width: 50%;
@@ -8,6 +14,14 @@
   background-color: $primary-color;
   font-family: $text-family;
   box-shadow: 0px 10px 10px $button-shadow;
+
+  @include mq(768px) {
+    font-size: 1.2rem;
+  }
+
+  @include mq(1440px) {
+    width: 17em;
+  }
 }
 
 @mixin carouselCard {
@@ -19,16 +33,26 @@
       opacity: 1;
     }
   }
+  text-align: center;
 
   animation-name: fade;
   animation-duration: 1.5s;
   height: 37.5em;
   color: $white;
 
+  @include mq(768px) {
+    height: 56em;
+  }
+
   h3 {
     font-family: $header-family;
     font-weight: 2rem;
     margin-bottom: 1rem;
+
+    @include mq(768px) {
+      font-size: 3.8rem;
+      line-height: 73px;
+    }
   }
 
   .carousel-text {
@@ -39,12 +63,28 @@
     font-family: $text-family;
     padding: 5%;
     line-height: 1.2em;
+
+    @include mq(768px) {
+      margin: 0 5em 0;
+      padding: 2em;
+      top: -32em;
+    }
+  }
+
+  p {
+    @include mq(1024px) {
+      padding: 0 15em;
+    }
   }
 
   img {
     width: 100%;
     height: 600px;
     object-fit: cover;
+
+    @include mq(768px) {
+      height: 900px;
+    }
   }
 
   .carousel-button {
@@ -70,6 +110,44 @@
       top: -0.5rem;
       transform: rotate(90deg);
     }
+
+    @include mq(768px) {
+      width: 4em;
+      height: 13em;
+
+      img {
+        top: -1.2em;
+      }
+    }
+  }
+}
+
+@mixin carousel-grid {
+  .carousel-grid {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 50% 50%;
+
+    img {
+      grid-column: 2 / span 1;
+      height: 100%;
+      padding: 25% 15%;
+    }
+
+    .carousel-text {
+      top: -40em;
+      text-align: left;
+      h3 {
+        font-size: 4rem;
+      }
+      p {
+        padding: 0;
+      }
+    }
+
+    .carousel-button {
+      text-align: center;
+    }
   }
 }
 
@@ -77,6 +155,19 @@
   padding: 0 10% 5%;
   background-color: $light-white;
   text-align: center;
+
+  @include mq(1440px) {
+    padding: 5%;
+  }
+
+  .section-content {
+    @include mq(1440px) {
+      display: grid;
+      grid-template-columns: repeat(3, 41%);
+      column-gap: 4%;
+      overflow: scroll;
+    }
+  }
 
   .card {
     margin-bottom: 2rem;
@@ -91,10 +182,17 @@
     font-size: 2rem;
     text-align: center;
     margin: 3.5rem auto 3rem;
+
+    @include mq(1440px) {
+      font-size: 3rem;
+    }
   }
 
   h3 {
     font-family: $header-family;
+    @include mq(1440px) {
+      font-size: 1.9rem;
+    }
   }
 
   img {

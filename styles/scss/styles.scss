@@ -12,6 +12,8 @@ body {
   width: 100%;
   font-family: $text-family;
   background-color: $faint-white;
+  max-width: 2000px;
+  margin: 0 auto;
 }
 
 h2,
@@ -44,6 +46,15 @@ header {
   top: 0;
   z-index: 3;
 
+  @include mq(768px) {
+    padding: 2em 5em;
+    height: 7em;
+  }
+
+  @include mq(1440px) {
+    position: relative;
+  }
+
   .logo-container,
   h4 {
     display: inline-block;
@@ -61,6 +72,25 @@ header {
     height: 100%;
   }
 
+  .sm-logo {
+    @include mq(768px) {
+      display: none;
+    }
+  }
+  .lg-logo {
+    display: none;
+    @include mq(768px) {
+      display: inline-block;
+      font-size: 1rem;
+    }
+  }
+
+  .ham {
+    @include mq(1440px) {
+      display: none;
+    }
+  }
+
   .nav-list {
     display: block;
     width: 100%;
@@ -70,11 +100,22 @@ header {
     left: 0;
     z-index: 2;
     background-color: $white;
+    @include mq(768px) {
+      top: 7em;
+    }
+    @include mq(1440px) {
+      position: relative;
+      top: 0;
+    }
 
     li {
       list-style-type: none;
       position: relative;
       margin: 1rem;
+
+      @include mq(1440px) {
+        display: inline-block;
+      }
     }
     a {
       text-decoration: none;
@@ -89,6 +130,11 @@ header {
         position: absolute;
         right: 30%;
         transform: rotate(90deg);
+
+        @include mq(1440px) {
+          position: relative;
+          right: -0.5em;
+        }
       }
     }
   }
@@ -117,6 +163,9 @@ header {
 
   .closed {
     display: none;
+    @include mq(1440px) {
+      display: inline-block;
+    }
   }
 }
 
@@ -153,10 +202,44 @@ header {
   .carousel-button {
     color: $white;
   }
+
+  .carousel-text {
+    @include mq(768px) {
+      top: -35em;
+      h3 {
+        font-size: 3rem;
+        line-height: 120%;
+      }
+    }
+  }
+
+  @include mq(1440px) {
+    @include carousel-grid;
+  }
 }
 
 .threeSlide {
   text-shadow: 2px 2px $text-dark;
+
+  .carousel-text {
+    @include mq(768px) {
+      top: -35em;
+      h3 {
+        font-size: 3rem;
+        line-height: 120%;
+      }
+    }
+  }
+
+  @include mq(1440px) {
+    @include carousel-grid;
+    color: $text-dark;
+    text-shadow: none;
+
+    .carousel-button {
+      color: $white;
+    }
+  }
 }
 
 .fourSlide {
@@ -165,6 +248,18 @@ header {
       linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
       linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
       rgba(19, 137, 81, 0.4);
+
+    @include mq(1440px) {
+      width: 60%;
+      padding: 4em;
+      top: -40em;
+    }
+  }
+
+  p {
+    @include mq(1440px) {
+      padding: 0;
+    }
   }
 
   .ayah {
@@ -173,19 +268,44 @@ header {
     line-height: 130%;
     font-weight: bold;
     font-family: Calibri, "Trebuchet MS", sans-serif;
+
+    @include mq(1440px) {
+      font-size: 1.5rem;
+      line-height: 120%;
+    }
   }
 
   .ayah-translation {
     margin: 0 0 1.8rem;
+
+    @include mq(1440px) {
+      font-size: 1.5rem;
+      line-height: 120%;
+    }
   }
 
   .ayah-ref {
     font-weight: 300;
+    @include mq(1440px) {
+      font-size: 1.3rem;
+    }
   }
 
   .donate-button {
     height: 60%;
     top: -14em;
+
+    @include mq(768px) {
+      width: 4em;
+      height: 13em;
+      right: -4.2em;
+    }
+
+    @include mq(1440px) {
+      width: 4em;
+      height: 13em;
+      right: -33%;
+    }
   }
 }
 
@@ -207,6 +327,10 @@ header {
   .active {
     width: 2rem;
     border-radius: 30px;
+  }
+
+  .two .active {
+    background-color: yellow;
   }
 }
 
@@ -267,8 +391,51 @@ header {
     border-radius: 4px;
     color: $primary-color;
     border: 1px solid $primary-color;
+
+    @include mq(1440px) {
+      font-size: 1.2rem;
+    }
   }
 }
+
+.intro-section {
+  @include mq(1440px) {
+    display: grid;
+    width: 100%;
+    grid-template-columns: 45% 45%;
+    column-gap: 10%;
+  }
+}
+
+.intro-text {
+  @include mq(1440px) {
+    margin: auto;
+
+    h2 {
+      font-size: 3rem;
+    }
+
+    p {
+      font-size: 1.2rem;
+    }
+  }
+}
+
+.mission-section {
+  @include mq(1440px) {
+    margin-bottom: 7.5em;
+    img {
+      display: inline-block;
+      grid-column: 2 / span 1;
+      grid-row: 1 / span 1;
+    }
+    .mission-text {
+      display: inline-block;
+      grid-column: 1 / span 1;
+    }
+  }
+}
+
 ////////////////////////////////////////////
 ////////////////////////////////////////////
 // intro section styles end
@@ -286,6 +453,13 @@ header {
   text-align: center;
   padding: 1em;
 
+  @include mq(1440px) {
+    display: grid;
+    padding: 7.7em 5em;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 5%;
+  }
+
   section {
     background-color: $gray-background;
     margin-top: 2em;
@@ -301,6 +475,12 @@ header {
     width: 3.5em;
     border-radius: 50%;
     background-color: $white;
+
+    @include mq(1440px) {
+      margin-top: 3.5em;
+      width: 6.5em;
+      padding: 1.5em;
+    }
   }
 
   img {
@@ -312,6 +492,11 @@ header {
     text-transform: uppercase;
     margin-top: 1rem;
     font-family: $header-family;
+
+    @include mq(1440px) {
+      font-size: 1.79em;
+      margin-top: 2rem;
+    }
   }
 
   p {
@@ -319,6 +504,13 @@ header {
     margin: 0.2rem auto 2rem;
     line-height: 150%;
     padding: 0 8%;
+
+    @include mq(1440px) {
+      margin: 0.5rem auto 3rem;
+      padding: 0 2%;
+      font-size: 1.2rem;
+      font-weight: 300;
+    }
   }
 
   .learn-link {
@@ -332,6 +524,12 @@ header {
     color: $white;
     border-radius: 4px;
     box-shadow: 0px 10px 10px $button-shadow;
+
+    @include mq(1440px) {
+      font-size: 1.1rem;
+      margin-bottom: 3rem;
+      width: 95%;
+    }
   }
 }
 ////////////////////////////////////////////
@@ -363,6 +561,12 @@ header {
       rgba(255, 255, 255, 0.4) 0%,
       rgba(255, 255, 255, 0.05) 100%
     );
+
+    @include mq(1440px) {
+      width: 33%;
+      font-size: 1.1rem;
+      padding: 2rem;
+    }
   }
 
   h3 {
@@ -375,6 +579,10 @@ header {
     font-weight: bold;
     font-size: 0.9rem;
     margin-bottom: 0.3rem;
+
+    @include mq(1440px) {
+      font-size: 1.5rem;
+    }
 
     span {
       font-weight: normal;
@@ -397,6 +605,13 @@ header {
   background-color: $faint-white;
   text-align: left;
 
+  .section-content {
+    @include mq(1440px) {
+      grid-template-columns: repeat(3, 1fr);
+      column-gap: 4%;
+    }
+  }
+
   span,
   h3,
   p,
@@ -407,6 +622,10 @@ header {
   .date {
     display: inline-block;
     font-size: 0.8rem;
+
+    @include mq(1440px) {
+      display: none;
+    }
   }
 
   h3 {
@@ -416,6 +635,10 @@ header {
 
   p {
     font-size: 0.8rem;
+
+    @include mq(1440px) {
+      font-size: 1rem;
+    }
   }
 
   a {
@@ -428,6 +651,10 @@ header {
     &::after {
       content: "\2192";
       margin-left: 0.5rem;
+    }
+
+    @include mq(1440px) {
+      font-size: 1.1rem;
     }
   }
 }
@@ -446,6 +673,79 @@ header {
 footer {
   background-color: $light-primary-color;
   padding: 1.5rem 0 0;
+
+  @include mq(1440px) {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    padding: 5% 0 0;
+
+    h2 {
+      font-size: 2rem;
+    }
+
+    .footer-links {
+      grid-row: 1 / span 1;
+      grid-column: 1 / span 1;
+
+      img {
+        width: 12%;
+        margin-left: 10%;
+      }
+
+      h4 {
+        display: inline-block;
+        font-size: 1.2rem;
+        width: 50%;
+        margin-left: 2%;
+        position: relative;
+        top: -1rem;
+      }
+
+      h2 {
+        margin: 10% 0 0 25%;
+      }
+
+      ul {
+        font-size: 1.2rem;
+        margin: 2% 0 0 25%;
+      }
+    }
+
+    .contact {
+      grid-column: 2 / span 1;
+
+      form {
+        width: 70%;
+        padding: 4%;
+
+        input {
+          height: 3.5em;
+        }
+
+        button {
+          width: 100%;
+        }
+      }
+    }
+
+    .socials {
+      grid-column: 1 / span 2;
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      padding: 5% 12%;
+
+      p {
+        font-size: 1rem;
+        width: 80%;
+      }
+    }
+
+    .attribution {
+      grid-column: 1 / span 2;
+      font-size: 1.2rem;
+      font-weight: bold;
+    }
+  }
 }
 h2 {
   margin: 1.2rem auto;
@@ -509,6 +809,19 @@ h2 {
   }
 }
 
+.social-icons {
+  @include mq(1440px) {
+    a {
+      width: 2em;
+      height: 2.2em;
+
+      img {
+        height: 100%;
+      }
+    }
+  }
+}
+
 .other-contacts {
   a {
     display: block;
@@ -523,6 +836,12 @@ h2 {
     padding: 0.5rem;
     border: 1px solid $primary-color;
     border-radius: 50%;
+
+    @include mq(1440px) {
+      width: 3rem;
+      height: 3rem;
+      padding: 0.8rem;
+    }
   }
 
   address,
@@ -536,6 +855,11 @@ h2 {
     font-size: 0.8rem;
     font-weight: 500;
     font-style: normal;
+
+    @include mq(1440px) {
+      font-size: 1rem;
+      width: 70%;
+    }
   }
 }
 
