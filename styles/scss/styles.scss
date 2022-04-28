@@ -152,6 +152,19 @@ header {
     padding: 5%;
     background-color: $light-primary-color;
 
+    @include mq(1440px) {
+      position: absolute;
+      top: 3em;
+      background-color: $white;
+      width: 20em;
+      text-align: left;
+      padding: 3%;
+
+      li {
+        display: block;
+      }
+    }
+
     > li {
       a {
         &::after {

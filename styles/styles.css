@@ -143,6 +143,19 @@ header .nav-list > ul {
   padding: 5%;
   background-color: rgba(213, 235, 225, 0.7);
 }
+@media screen and (min-width: 1440px) {
+  header .nav-list > ul {
+    position: absolute;
+    top: 3em;
+    background-color: #fefefe;
+    width: 20em;
+    text-align: left;
+    padding: 3%;
+  }
+  header .nav-list > ul li {
+    display: block;
+  }
+}
 header .nav-list > ul > li a::after {
   content: "";
 }
