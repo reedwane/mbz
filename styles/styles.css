@@ -146,7 +146,8 @@ header .nav-list > ul {
 @media screen and (min-width: 1440px) {
   header .nav-list > ul {
     position: absolute;
-    top: 3em;
+    top: 5.5em;
+    left: 40%;
     background-color: #fefefe;
     width: 20em;
     text-align: left;
@@ -516,6 +517,7 @@ header .closed {
   bottom: 3.2em;
 }
 .dots .dot {
+  cursor: pointer;
   display: inline-block;
   width: 0.4rem;
   height: 0.4rem;
@@ -704,6 +706,9 @@ header .closed {
   background-color: whitesmoke;
   text-align: center;
 }
+.events ::-webkit-scrollbar {
+  height: 0px;
+}
 @media screen and (min-width: 1440px) {
   .events {
     padding: 5%;
@@ -714,7 +719,7 @@ header .closed {
     display: grid;
     grid-template-columns: repeat(3, 41%);
     column-gap: 4%;
-    overflow: scroll;
+    overflow-x: scroll;
   }
 }
 .events .card {
@@ -793,6 +798,9 @@ header .closed {
   background-color: #ececec;
   text-align: left;
 }
+.news ::-webkit-scrollbar {
+  height: 0px;
+}
 @media screen and (min-width: 1440px) {
   .news {
     padding: 5%;
@@ -803,7 +811,7 @@ header .closed {
     display: grid;
     grid-template-columns: repeat(3, 41%);
     column-gap: 4%;
-    overflow: scroll;
+    overflow-x: scroll;
   }
 }
 .news .card {

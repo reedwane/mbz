@@ -154,7 +154,8 @@ header {
 
     @include mq(1440px) {
       position: absolute;
-      top: 3em;
+      top: 5.5em;
+      left: 40%;
       background-color: $white;
       width: 20em;
       text-align: left;
@@ -329,6 +330,7 @@ header {
   bottom: 3.2em;
 
   .dot {
+    cursor: pointer;
     display: inline-block;
     width: 0.4rem;
     height: 0.4rem;

@@ -51,6 +51,7 @@ window.addEventListener("DOMContentLoaded", (e) => {
   let ham = document.querySelectorAll(".ham")[0];
   let navList = document.querySelectorAll(".nav-list")[0];
   let mainLinks = document.querySelectorAll(".nav-list > li");
+  let nestedMenu = document.querySelectorAll(".nav-list > ul");
 
   ham.addEventListener("click", (e) => {
     navList.classList.toggle("closed");
@@ -61,10 +62,19 @@ window.addEventListener("DOMContentLoaded", (e) => {
     link.addEventListener("click", (e) => {
       let nested = link.nextElementSibling; //the nested ul
 
+      let index = Array.prototype.indexOf.call(mainLinks, link);
+
       if (nested) {
         nested.style.display == "block"
           ? (nested.style.display = "none")
           : (nested.style.display = "block");
+
+        nested.style.left = `${index * 15}%`;
+      }
+
+      for (let ul of nestedMenu) {
+        //close all others
+        if (ul != nested) ul.style.display = "none";
       }
     });
   });

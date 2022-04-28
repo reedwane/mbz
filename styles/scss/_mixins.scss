@@ -156,6 +156,10 @@
   background-color: $light-white;
   text-align: center;
 
+  ::-webkit-scrollbar {
+    height: 0px;
+  }
+
   @include mq(1440px) {
     padding: 5%;
   }
@@ -165,7 +169,7 @@
       display: grid;
       grid-template-columns: repeat(3, 41%);
       column-gap: 4%;
-      overflow: scroll;
+      overflow-x: scroll;
     }
   }
 
