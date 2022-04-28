@@ -4,6 +4,7 @@ window.addEventListener("DOMContentLoaded", (e) => {
   let slideIndex = 1;
   let slides = document.querySelectorAll(".slides");
   let dots = document.querySelectorAll(".dot");
+  let controls = document.querySelectorAll(".carousel > span");
 
   const showSlides = (n) => {
     if (n > slides.length) slideIndex = 1; //return to the first slide
@@ -19,11 +20,41 @@ window.addEventListener("DOMContentLoaded", (e) => {
     // set active slide
     slides[slideIndex - 1].classList.remove("fade");
     dots[slideIndex - 1].classList.add("active");
+
+    // change color of dots and left and right
+    if (slideIndex == 2 || slideIndex == 3) {
+      for (let dot of dots) {
+        dot.style.backgroundColor = "rgba(19, 137, 81, 1)";
+      }
+      for (let control of controls) {
+        control.style.color = "rgba(19, 137, 81, 1)";
+        control.style.backgroundColor = "rgba(189, 189, 189, 1)";
+      }
+    } else {
+      for (let dot of dots) {
+        dot.style.backgroundColor = "#fefefe";
+      }
+      for (let control of controls) {
+        control.style.color = "white";
+      }
+    }
   };
 
   const nextSlide = (n) => {
     showSlides((slideIndex += n));
   };
+
+  //
+  // the slide toggle buttons
+  document.querySelectorAll(".left")[0].addEventListener("click", (e) => {
+    nextSlide(-1);
+  });
+
+  document.querySelectorAll(".right")[0].addEventListener("click", (e) => {
+    nextSlide(1);
+  });
+
+  //
 
   const presentSlide = (n) => {
     // when the dots are clicked

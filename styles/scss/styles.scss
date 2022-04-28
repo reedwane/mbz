@@ -323,6 +323,31 @@ header {
   }
 }
 
+.left,
+.right {
+  display: none;
+  @include mq(768px) {
+    position: absolute;
+    background-color: rgba(224, 224, 224, 0.32);
+    color: $white;
+    display: inline-block;
+    width: 3em;
+    height: 3em;
+    padding: 1em;
+    border-radius: 50%;
+    top: 50%;
+    cursor: pointer;
+    font-weight: bold;
+  }
+}
+
+.left {
+  left: 2em;
+}
+.right {
+  right: 2em;
+}
+
 .dots {
   width: 100%;
   text-align: center;
@@ -336,7 +361,6 @@ header {
     height: 0.4rem;
     border-radius: 50%;
     background-color: $white;
-    box-shadow: 0px 0px 10px $text-dark;
 
     @include mq(1440px) {
       width: 0.5rem;

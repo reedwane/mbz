@@ -383,8 +383,8 @@ header .closed {
   }
   .twoSlide .carousel-grid img {
     grid-column: 2/span 1;
-    height: 100%;
-    padding: 15% 15%;
+    width: 100%;
+    padding: 20% 15% 20% 10%;
   }
   .twoSlide .carousel-grid .carousel-text {
     top: -40em;
@@ -425,8 +425,8 @@ header .closed {
   }
   .threeSlide .carousel-grid img {
     grid-column: 2/span 1;
-    height: 100%;
-    padding: 15% 15%;
+    width: 100%;
+    padding: 20% 15% 20% 10%;
   }
   .threeSlide .carousel-grid .carousel-text {
     top: -40em;
@@ -510,6 +510,35 @@ header .closed {
   }
 }
 
+.left,
+.right {
+  display: none;
+}
+@media screen and (min-width: 768px) {
+  .left,
+.right {
+    position: absolute;
+    background-color: rgba(224, 224, 224, 0.32);
+    color: #fefefe;
+    display: inline-block;
+    width: 3em;
+    height: 3em;
+    padding: 1em;
+    border-radius: 50%;
+    top: 50%;
+    cursor: pointer;
+    font-weight: bold;
+  }
+}
+
+.left {
+  left: 2em;
+}
+
+.right {
+  right: 2em;
+}
+
 .dots {
   width: 100%;
   text-align: center;
@@ -523,7 +552,6 @@ header .closed {
   height: 0.4rem;
   border-radius: 50%;
   background-color: #fefefe;
-  box-shadow: 0px 0px 10px #2a2a2a;
 }
 @media screen and (min-width: 1440px) {
   .dots .dot {
