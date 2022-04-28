@@ -337,11 +337,20 @@ header {
     border-radius: 50%;
     background-color: $white;
     box-shadow: 0px 0px 10px $text-dark;
+
+    @include mq(1440px) {
+      width: 0.5rem;
+      height: 0.5rem;
+    }
   }
 
   .active {
     width: 2rem;
     border-radius: 30px;
+
+    @include mq(1440px) {
+      width: 2.5rem;
+    }
   }
 
   .two .active {

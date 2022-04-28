@@ -384,7 +384,7 @@ header .closed {
   .twoSlide .carousel-grid img {
     grid-column: 2/span 1;
     height: 100%;
-    padding: 25% 15%;
+    padding: 15% 15%;
   }
   .twoSlide .carousel-grid .carousel-text {
     top: -40em;
@@ -426,7 +426,7 @@ header .closed {
   .threeSlide .carousel-grid img {
     grid-column: 2/span 1;
     height: 100%;
-    padding: 25% 15%;
+    padding: 15% 15%;
   }
   .threeSlide .carousel-grid .carousel-text {
     top: -40em;
@@ -525,9 +525,20 @@ header .closed {
   background-color: #fefefe;
   box-shadow: 0px 0px 10px #2a2a2a;
 }
+@media screen and (min-width: 1440px) {
+  .dots .dot {
+    width: 0.5rem;
+    height: 0.5rem;
+  }
+}
 .dots .active {
   width: 2rem;
   border-radius: 30px;
+}
+@media screen and (min-width: 1440px) {
+  .dots .active {
+    width: 2.5rem;
+  }
 }
 .dots .two .active {
   background-color: yellow;
