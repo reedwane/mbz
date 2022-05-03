@@ -86,6 +86,12 @@ window.addEventListener("DOMContentLoaded", (e) => {
   });
 
   showSlides(slideIndex); //initial render
+  setInterval(() => {
+    // automatic slides
+    slideIndex++;
+    showSlides(slideIndex);
+  }, 7000);
+
   //
   // carousel logic ends
   //
