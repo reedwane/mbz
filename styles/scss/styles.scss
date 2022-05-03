@@ -537,6 +537,10 @@ header {
 
     p {
       font-size: 1.2rem;
+
+      @include mq(600px) {
+        font-size: 1.3rem;
+      }
     }
   }
 }
@@ -630,7 +634,7 @@ header {
     font-family: $header-family;
 
     @include mq(1024px) {
-      font-size: 1.79em;
+      font-size: 1.9em;
       margin-top: 2rem;
     }
   }
