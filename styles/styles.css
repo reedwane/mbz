@@ -24,6 +24,11 @@ input {
   max-width: 100%;
 }
 
+/* width */
+::-webkit-scrollbar {
+  display: none;
+}
+
 header {
   height: 3.6em;
   width: 100%;
@@ -616,6 +621,7 @@ header .closed {
 .intro img {
   border-radius: 12px;
   margin-top: 2em;
+  width: 100%;
 }
 .intro h2 {
   font-size: 1.5rem;
@@ -715,14 +721,13 @@ header .closed {
     display: grid;
     padding: 5em;
     grid-template-columns: repeat(3, 50%);
-    column-gap: 4%;
+    column-gap: 5%;
     overflow-x: scroll;
   }
 }
 @media screen and (min-width: 1024px) {
   .learn-more {
     padding: 7.7em 5em;
-    grid-template-columns: repeat(3, 41%);
   }
 }
 .learn-more section {
