@@ -45,7 +45,7 @@ header {
 }
 @media screen and (min-width: 600px) {
   header {
-    padding: 2em 5em;
+    padding: 2em 4em;
     height: 7em;
   }
 }
@@ -91,7 +91,7 @@ header .lg-logo {
 header .ham {
   cursor: pointer;
 }
-@media screen and (min-width: 1040px) {
+@media screen and (min-width: 1024px) {
   header .ham {
     display: none;
   }
@@ -111,7 +111,7 @@ header .nav-list {
     top: 7em;
   }
 }
-@media screen and (min-width: 1040px) {
+@media screen and (min-width: 1024px) {
   header .nav-list {
     position: relative;
     top: 0;
@@ -122,7 +122,7 @@ header .nav-list li {
   position: relative;
   margin: 1rem;
 }
-@media screen and (min-width: 1040px) {
+@media screen and (min-width: 1024px) {
   header .nav-list li {
     display: inline-block;
   }
@@ -135,13 +135,12 @@ header .nav-list a {
   display: inline-block;
 }
 header .nav-list a::after {
-  content: ">";
+  content: url("../assets/icons/down-arrow.png");
   display: inline-block;
   position: absolute;
-  right: 30%;
-  transform: rotate(90deg);
+  right: 25%;
 }
-@media screen and (min-width: 1040px) {
+@media screen and (min-width: 1024px) {
   header .nav-list a::after {
     position: relative;
     right: -0.5em;
@@ -157,7 +156,7 @@ header .nav-list > ul {
   padding: 5%;
   background-color: rgba(213, 235, 225, 0.7);
 }
-@media screen and (min-width: 1040px) {
+@media screen and (min-width: 1024px) {
   header .nav-list > ul {
     position: absolute;
     top: 5.5em;
@@ -177,7 +176,7 @@ header .nav-list > ul > li a::after {
 header .closed {
   display: none;
 }
-@media screen and (min-width: 1040px) {
+@media screen and (min-width: 1024px) {
   header .closed {
     display: inline-block;
   }
@@ -283,7 +282,7 @@ header .closed {
     padding: 0 10em;
   }
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 1440px) {
   .oneSlide p,
 .twoSlide p,
 .threeSlide p,
@@ -369,10 +368,10 @@ header .closed {
   .twoSlide .carousel-grid img {
     grid-column: 2/span 1;
     width: 100%;
-    padding: 20% 15% 25% 10%;
+    padding: 20% 20% 25% 5%;
   }
   .twoSlide .carousel-grid .carousel-text {
-    top: -45em;
+    top: -52em;
     text-align: left;
   }
   .twoSlide .carousel-grid .carousel-text h3 {
@@ -381,6 +380,13 @@ header .closed {
   .twoSlide .carousel-grid .carousel-text p {
     padding: 0;
   }
+}
+@media screen and (min-width: 1024px) and (min-width: 1440px) {
+  .twoSlide .carousel-grid .carousel-text {
+    top: -45em;
+  }
+}
+@media screen and (min-width: 1024px) {
   .twoSlide .carousel-grid .carousel-button {
     text-align: center;
   }
@@ -408,10 +414,10 @@ header .closed {
   .threeSlide .carousel-grid img {
     grid-column: 2/span 1;
     width: 100%;
-    padding: 20% 15% 25% 10%;
+    padding: 20% 20% 25% 5%;
   }
   .threeSlide .carousel-grid .carousel-text {
-    top: -45em;
+    top: -52em;
     text-align: left;
   }
   .threeSlide .carousel-grid .carousel-text h3 {
@@ -420,9 +426,18 @@ header .closed {
   .threeSlide .carousel-grid .carousel-text p {
     padding: 0;
   }
+}
+@media screen and (min-width: 1024px) and (min-width: 1440px) {
+  .threeSlide .carousel-grid .carousel-text {
+    top: -45em;
+  }
+}
+@media screen and (min-width: 1024px) {
   .threeSlide .carousel-grid .carousel-button {
     text-align: center;
   }
+}
+@media screen and (min-width: 1024px) {
   .threeSlide .carousel-button {
     color: #fefefe;
   }
@@ -431,7 +446,13 @@ header .closed {
 .fourSlide .carousel-text {
   background: linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)), rgba(19, 137, 81, 0.4);
 }
-@media screen and (min-width: 1024px) {
+@media screen and (min-width: 600px) {
+  .fourSlide .carousel-text {
+    width: 75%;
+    padding: 2em;
+  }
+}
+@media screen and (min-width: 1440px) {
   .fourSlide .carousel-text {
     width: 60%;
     padding: 4em;
@@ -728,6 +749,7 @@ header .closed {
 @media screen and (min-width: 1024px) {
   .learn-more {
     padding: 7.7em 5em;
+    grid-template-columns: repeat(3, 37%);
   }
 }
 .learn-more section {
@@ -1158,7 +1180,7 @@ h2 {
   .socials {
     display: grid;
     grid-template-columns: 1fr 1fr;
-    padding: 5% 12%;
+    padding: 0% 12%;
   }
   .socials p {
     font-size: 1rem;

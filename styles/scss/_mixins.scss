@@ -83,7 +83,7 @@
       padding: 0 10em;
     }
 
-    @include mq(1024px) {
+    @include mq(1440px) {
       padding: 0 17em;
     }
   }
@@ -116,17 +116,21 @@
     img {
       grid-column: 2 / span 1;
       width: 100%;
-      padding: 20% 15% 25% 10%;
+      padding: 20% 20% 25% 5%;
     }
 
     .carousel-text {
-      top: -45em;
+      top: -52em;
       text-align: left;
       h3 {
         font-size: 4rem;
       }
       p {
         padding: 0;
+      }
+
+      @include mq(1440px) {
+        top: -45em;
       }
     }
 

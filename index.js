@@ -22,21 +22,35 @@ window.addEventListener("DOMContentLoaded", (e) => {
     slides[slideIndex - 1].classList.remove("fade");
     dots[slideIndex - 1].classList.add("active");
 
-    // change color of dots and left and right
+    // change color of dots and left and right arrows and their background
     if (slideIndex == 2 || slideIndex == 3) {
       for (let dot of dots) {
-        dot.style.backgroundColor = "rgba(19, 137, 81, 1)";
+        dot.style.backgroundColor = "rgba(19, 137, 81, 1)"; //dots to green
       }
+
       for (let control of controls) {
-        control.style.color = "rgba(19, 137, 81, 1)";
+        let i = Array.prototype.indexOf.call(controls, control); //get the position of the arrow (first-left or second-right)
+        let position = control.children[0].setAttribute(
+          "src",
+          `./assets/icons/green-${i == 0 ? "left" : "right"}.png`
+        );
+
         control.style.backgroundColor = "rgba(189, 189, 189, 1)";
       }
+      //
     } else {
+      //
       for (let dot of dots) {
-        dot.style.backgroundColor = "#fefefe";
+        dot.style.backgroundColor = "#fefefe"; //dots to white
       }
       for (let control of controls) {
-        control.style.color = "white";
+        let i = Array.prototype.indexOf.call(controls, control); //get the position of the arrow (first-left or second-right)
+
+        control.children[0].setAttribute(
+          "src",
+          `./assets/icons/white-${i == 0 ? "left" : "right"}.png`
+        );
+
         control.style.backgroundColor = "rgba(224, 224, 224, 0.3)";
       }
     }
