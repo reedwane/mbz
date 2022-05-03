@@ -28,10 +28,11 @@ input {
 
 ////////////////////////////////////////////
 ////////////////////////////////////////////
-// Header styles start
+// Header styles start (used 1040p for large menu due to size issues)
 ////////////////////////////////////////////
 ////////////////////////////////////////////
 
+// (used 1040p for large menu due to size issues)
 header {
   height: 3.6em;
   width: 100%;
@@ -46,12 +47,12 @@ header {
   top: 0;
   z-index: 3;
 
-  @include mq(768px) {
+  @include mq(600px) {
     padding: 2em 5em;
     height: 7em;
   }
 
-  @include mq(1440px) {
+  @include mq(1024px) {
     position: relative;
   }
 
@@ -62,10 +63,15 @@ header {
   }
 
   h4 {
+    cursor: default;
     position: relative;
     top: -10%;
     font-size: 0.5rem;
     font-family: $text-family;
+
+    @include mq(600px) {
+      font-size: 1rem;
+    }
   }
 
   .logo {
@@ -73,20 +79,21 @@ header {
   }
 
   .sm-logo {
-    @include mq(768px) {
+    @include mq(1350px) {
       display: none;
     }
   }
   .lg-logo {
     display: none;
-    @include mq(768px) {
+    @include mq(1350px) {
       display: inline-block;
       font-size: 1rem;
     }
   }
 
   .ham {
-    @include mq(1440px) {
+    cursor: pointer;
+    @include mq(1040px) {
       display: none;
     }
   }
@@ -100,10 +107,10 @@ header {
     left: 0;
     z-index: 2;
     background-color: $white;
-    @include mq(768px) {
+    @include mq(600px) {
       top: 7em;
     }
-    @include mq(1440px) {
+    @include mq(1040px) {
       position: relative;
       top: 0;
     }
@@ -113,7 +120,7 @@ header {
       position: relative;
       margin: 1rem;
 
-      @include mq(1440px) {
+      @include mq(1040px) {
         display: inline-block;
       }
     }
@@ -131,7 +138,7 @@ header {
         right: 30%;
         transform: rotate(90deg);
 
-        @include mq(1440px) {
+        @include mq(1040px) {
           position: relative;
           right: -0.5em;
         }
@@ -152,7 +159,7 @@ header {
     padding: 5%;
     background-color: $light-primary-color;
 
-    @include mq(1440px) {
+    @include mq(1040px) {
       position: absolute;
       top: 5.5em;
       left: 40%;
@@ -177,7 +184,7 @@ header {
 
   .closed {
     display: none;
-    @include mq(1440px) {
+    @include mq(1040px) {
       display: inline-block;
     }
   }
@@ -201,6 +208,13 @@ header {
 
 .carousel {
   position: relative;
+  @include mq(600px) {
+    top: 7em;
+  }
+
+  @include mq(1024px) {
+    top: 0;
+  }
 }
 
 .oneSlide,
@@ -218,8 +232,8 @@ header {
   }
 
   .carousel-text {
-    @include mq(768px) {
-      top: -35em;
+    @include mq(600px) {
+      // top: -35em;
       h3 {
         font-size: 3rem;
         line-height: 120%;
@@ -227,7 +241,7 @@ header {
     }
   }
 
-  @include mq(1440px) {
+  @include mq(1024px) {
     @include carousel-grid;
   }
 }
@@ -236,8 +250,7 @@ header {
   text-shadow: 2px 2px $text-dark;
 
   .carousel-text {
-    @include mq(768px) {
-      top: -35em;
+    @include mq(600px) {
       h3 {
         font-size: 3rem;
         line-height: 120%;
@@ -245,7 +258,7 @@ header {
     }
   }
 
-  @include mq(1440px) {
+  @include mq(1024px) {
     @include carousel-grid;
     color: $text-dark;
     text-shadow: none;
@@ -263,15 +276,14 @@ header {
       linear-gradient(0deg, rgba(0, 0, 0, 0.2), rgba(0, 0, 0, 0.2)),
       rgba(19, 137, 81, 0.4);
 
-    @include mq(1440px) {
+    @include mq(1024px) {
       width: 60%;
       padding: 4em;
-      top: -40em;
     }
   }
 
   p {
-    @include mq(1440px) {
+    @include mq(1024px) {
       padding: 0;
     }
   }
@@ -283,7 +295,7 @@ header {
     font-weight: bold;
     font-family: Calibri, "Trebuchet MS", sans-serif;
 
-    @include mq(1440px) {
+    @include mq(1024px) {
       font-size: 1.5rem;
       line-height: 120%;
     }
@@ -292,7 +304,7 @@ header {
   .ayah-translation {
     margin: 0 0 1.8rem;
 
-    @include mq(1440px) {
+    @include mq(1024px) {
       font-size: 1.5rem;
       line-height: 120%;
     }
@@ -300,7 +312,7 @@ header {
 
   .ayah-ref {
     font-weight: 300;
-    @include mq(1440px) {
+    @include mq(1024px) {
       font-size: 1.3rem;
     }
   }
@@ -309,13 +321,13 @@ header {
     height: 60%;
     top: -14em;
 
-    @include mq(768px) {
+    @include mq(600px) {
       width: 4em;
       height: 13em;
       right: -4.2em;
     }
 
-    @include mq(1440px) {
+    @include mq(1024px) {
       width: 4em;
       height: 13em;
       right: -33%;
@@ -326,9 +338,10 @@ header {
 .left,
 .right {
   display: none;
-  @include mq(768px) {
+  @include mq(600px) {
     position: absolute;
-    background-color: rgba(224, 224, 224, 0.32);
+    background: rgba(224, 224, 224, 0.3);
+
     color: $white;
     display: inline-block;
     width: 3em;
@@ -348,11 +361,48 @@ header {
   right: 2em;
 }
 
+.donate-button {
+  position: absolute;
+  top: 2em;
+  right: 0;
+
+  @include button;
+  text-align: center;
+  writing-mode: vertical-lr;
+  transform: scale(-1, -1);
+  width: 3em;
+  height: 23%;
+  color: $white;
+
+  img {
+    height: 18%;
+    position: relative;
+    top: -0.5rem;
+    transform: rotate(90deg);
+  }
+
+  @include mq(600px) {
+    width: 4em;
+    height: 13em;
+
+    img {
+      top: -1.2em;
+    }
+  }
+}
+
 .dots {
   width: 100%;
   text-align: center;
   position: absolute;
   bottom: 3.2em;
+  @include mq(600px) {
+    bottom: 10em;
+  }
+
+  @include mq(1024px) {
+    bottom: 5em;
+  }
 
   .dot {
     cursor: pointer;
@@ -362,7 +412,7 @@ header {
     border-radius: 50%;
     background-color: $white;
 
-    @include mq(1440px) {
+    @include mq(1024px) {
       width: 0.5rem;
       height: 0.5rem;
     }
@@ -372,13 +422,9 @@ header {
     width: 2rem;
     border-radius: 30px;
 
-    @include mq(1440px) {
+    @include mq(1024px) {
       width: 2.5rem;
     }
-  }
-
-  .two .active {
-    background-color: yellow;
   }
 }
 
@@ -396,6 +442,12 @@ header {
 
 .intro {
   padding: 6.5%;
+  text-align: center;
+
+  @include mq(600px) {
+    padding: 6.5% 0 6.5%;
+    text-align: left;
+  }
 
   img {
     border-radius: 12px;
@@ -416,8 +468,8 @@ header {
       background-color: $primary-color;
       height: 2px;
       position: absolute;
-      bottom: 0.5rem;
-      left: 0;
+      bottom: 0.2rem;
+      left: 20%;
     }
   }
 
@@ -440,23 +492,23 @@ header {
     color: $primary-color;
     border: 1px solid $primary-color;
 
-    @include mq(1440px) {
+    @include mq(1024px) {
       font-size: 1.2rem;
     }
   }
 }
 
 .intro-section {
-  @include mq(1440px) {
+  @include mq(600px) {
     display: grid;
     width: 100%;
-    grid-template-columns: 45% 45%;
-    column-gap: 10%;
+    grid-template-columns: 47% 47%;
+    column-gap: 6%;
   }
 }
 
 .intro-text {
-  @include mq(1440px) {
+  @include mq(1024px) {
     margin: auto;
 
     h2 {
@@ -470,18 +522,28 @@ header {
 }
 
 .mission-section {
-  @include mq(1440px) {
-    margin-bottom: 7.5em;
+  @include mq(600px) {
+    margin-bottom: 5em;
     img {
       display: inline-block;
       grid-column: 2 / span 1;
       grid-row: 1 / span 1;
+      border-radius: 12px 0 0 0;
     }
     .mission-text {
+      padding-left: 10%;
       display: inline-block;
       grid-column: 1 / span 1;
     }
   }
+
+  @include mq(1024px) {
+    margin-bottom: 7.5em;
+  }
+}
+
+.vision-text {
+  padding-right: 10%;
 }
 
 ////////////////////////////////////////////
@@ -501,11 +563,17 @@ header {
   text-align: center;
   padding: 1em;
 
-  @include mq(1440px) {
+  @include mq(600px) {
     display: grid;
+    padding: 5em;
+    grid-template-columns: repeat(3, 50%);
+    column-gap: 4%;
+    overflow-x: scroll;
+  }
+
+  @include mq(1024px) {
     padding: 7.7em 5em;
-    grid-template-columns: repeat(3, 1fr);
-    gap: 5%;
+    grid-template-columns: repeat(3, 41%);
   }
 
   section {
@@ -524,7 +592,7 @@ header {
     border-radius: 50%;
     background-color: $white;
 
-    @include mq(1440px) {
+    @include mq(1024px) {
       margin-top: 3.5em;
       width: 6.5em;
       padding: 1.5em;
@@ -541,7 +609,7 @@ header {
     margin-top: 1rem;
     font-family: $header-family;
 
-    @include mq(1440px) {
+    @include mq(1024px) {
       font-size: 1.79em;
       margin-top: 2rem;
     }
@@ -553,7 +621,7 @@ header {
     line-height: 150%;
     padding: 0 8%;
 
-    @include mq(1440px) {
+    @include mq(1024px) {
       margin: 0.5rem auto 3rem;
       padding: 0 2%;
       font-size: 1.2rem;
@@ -573,7 +641,7 @@ header {
     border-radius: 4px;
     box-shadow: 0px 10px 10px $button-shadow;
 
-    @include mq(1440px) {
+    @include mq(1024px) {
       font-size: 1.1rem;
       margin-bottom: 3rem;
       width: 95%;
@@ -610,7 +678,7 @@ header {
       rgba(255, 255, 255, 0.05) 100%
     );
 
-    @include mq(1440px) {
+    @include mq(1024px) {
       width: 33%;
       font-size: 1.1rem;
       padding: 2rem;
@@ -628,7 +696,7 @@ header {
     font-size: 0.9rem;
     margin-bottom: 0.3rem;
 
-    @include mq(1440px) {
+    @include mq(1024px) {
       font-size: 1.5rem;
     }
 
@@ -653,13 +721,6 @@ header {
   background-color: $faint-white;
   text-align: left;
 
-  .section-content {
-    @include mq(1440px) {
-      grid-template-columns: repeat(3, 1fr);
-      column-gap: 4%;
-    }
-  }
-
   span,
   h3,
   p,
@@ -671,7 +732,7 @@ header {
     display: inline-block;
     font-size: 0.8rem;
 
-    @include mq(1440px) {
+    @include mq(1024px) {
       display: none;
     }
   }
@@ -684,7 +745,7 @@ header {
   p {
     font-size: 0.8rem;
 
-    @include mq(1440px) {
+    @include mq(1024px) {
       font-size: 1rem;
     }
   }
@@ -695,13 +756,14 @@ header {
     color: $primary-color;
     font-size: 0.9rem;
     font-weight: bold;
+    cursor: pointer;
 
     &::after {
       content: "\2192";
       margin-left: 0.5rem;
     }
 
-    @include mq(1440px) {
+    @include mq(1024px) {
       font-size: 1.1rem;
     }
   }
@@ -722,95 +784,55 @@ footer {
   background-color: $light-primary-color;
   padding: 1.5rem 0 0;
 
-  @include mq(1440px) {
+  @include mq(768px) {
     display: grid;
     grid-template-columns: repeat(2, 1fr);
     padding: 5% 0 0;
 
-    h2 {
-      font-size: 2rem;
-    }
-
     .footer-links {
       grid-row: 1 / span 1;
       grid-column: 1 / span 1;
-
-      img {
-        width: 12%;
-        margin-left: 10%;
-      }
-
-      h4 {
-        display: inline-block;
-        font-size: 1.2rem;
-        width: 50%;
-        margin-left: 2%;
-        position: relative;
-        top: -1rem;
-      }
-
-      h2 {
-        margin: 10% 0 0 25%;
-      }
-
-      ul {
-        font-size: 1.2rem;
-        margin: 2% 0 0 25%;
-      }
     }
 
     .contact {
       grid-column: 2 / span 1;
-
-      form {
-        width: 70%;
-        padding: 4%;
-
-        input {
-          height: 3.5em;
-        }
-
-        button {
-          width: 100%;
-        }
-      }
     }
 
     .socials {
       grid-column: 1 / span 2;
-      display: grid;
-      grid-template-columns: 1fr 1fr;
-      padding: 5% 12%;
-
-      p {
-        font-size: 1rem;
-        width: 80%;
-      }
     }
 
     .attribution {
       grid-column: 1 / span 2;
-      font-size: 1.2rem;
-      font-weight: bold;
     }
   }
 }
+
 h2 {
   margin: 1.2rem auto;
+  @include mq(768px) {
+    font-size: 2rem;
+  }
 }
 
 .contact {
   margin: 0 1.5rem 0;
+
   form {
+    width: 100%;
     background-color: $white;
     border-radius: 1rem;
     padding: 1rem;
     margin-bottom: 2rem;
+    @include mq(1024px) {
+      width: 60%;
+      padding: 4%;
+    }
 
     input {
       display: block;
       width: 100%;
-      height: 2.5rem;
+      height: 3.5em;
       outline: none;
       border: 1px solid $primary-color;
       border-radius: 5px;
@@ -820,9 +842,11 @@ h2 {
     button {
       border: none;
       @include button;
-      width: 100%;
-      margin: 0;
       color: white;
+      @include mq(1024px) {
+        margin: 0;
+        width: 100%;
+      }
     }
   }
 }
@@ -831,22 +855,78 @@ h2 {
   margin: 0 1.5rem 2rem;
   margin-bottom: 2rem;
 
+  img {
+    @include mq(768px) {
+      width: 12%;
+      margin-left: 10%;
+    }
+  }
+
   ul {
     list-style-type: none;
     font-weight: 500;
     font-size: 0.8rem;
 
     display: grid;
-    grid-template-columns: auto auto auto;
+    grid-template-columns: auto auto;
+
+    @include mq(768px) {
+      font-size: 1.2rem;
+      margin: 2% 0 0 10%;
+
+      @include mq(1024px) {
+        margin: 2% 0 0 25%;
+        grid-template-columns: auto auto auto;
+      }
+    }
   }
 
   li {
     margin-bottom: 1rem;
+    cursor: pointer;
+  }
+
+  .logo-container {
+    display: none;
+
+    @include mq(1024px) {
+      display: block;
+    }
+  }
+
+  @include mq(768px) {
+    h4 {
+      display: inline-block;
+      font-size: 1.2rem;
+      width: 50%;
+      margin-left: 2%;
+      position: relative;
+      top: -1rem;
+    }
+
+    h2 {
+      margin: 2% 0 0 10%;
+      @include mq(1024px) {
+        margin: 2% 0 0 25%;
+      }
+    }
   }
 }
 
 .socials {
   margin: 0 1.5rem 0;
+
+  @include mq(768px) {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    padding: 5% 12%;
+
+    p {
+      font-size: 1rem;
+      width: 80%;
+    }
+  }
+
   p {
     font-size: 0.8rem;
   }
@@ -858,7 +938,7 @@ h2 {
 }
 
 .social-icons {
-  @include mq(1440px) {
+  @include mq(1024px) {
     a {
       width: 2em;
       height: 2.2em;
@@ -885,7 +965,7 @@ h2 {
     border: 1px solid $primary-color;
     border-radius: 50%;
 
-    @include mq(1440px) {
+    @include mq(1024px) {
       width: 3rem;
       height: 3rem;
       padding: 0.8rem;
@@ -897,17 +977,22 @@ h2 {
     position: relative;
     top: -0.5rem;
     display: inline-block;
-    width: 80%;
+    width: fit-content;
     line-height: 150%;
     margin-left: 1rem;
     font-size: 0.8rem;
     font-weight: 500;
     font-style: normal;
 
-    @include mq(1440px) {
+    @include mq(1024px) {
       font-size: 1rem;
       width: 70%;
     }
+  }
+
+  address {
+    width: 78%;
+    top: 0rem;
   }
 }
 
@@ -916,6 +1001,11 @@ h2 {
   background-color: $white;
   font-size: 0.7rem;
   padding: 1rem;
+  font-weight: bold;
+
+  @include mq(768px) {
+    font-size: 1.2rem;
+  }
 }
 ////////////////////////////////////////////
 ////////////////////////////////////////////

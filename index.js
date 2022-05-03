@@ -1,10 +1,11 @@
 window.addEventListener("DOMContentLoaded", (e) => {
+  //
   // carousel logic//
-
+  //
   let slideIndex = 1;
   let slides = document.querySelectorAll(".slides");
   let dots = document.querySelectorAll(".dot");
-  let controls = document.querySelectorAll(".carousel > span");
+  let controls = document.querySelectorAll(".control");
 
   const showSlides = (n) => {
     if (n > slides.length) slideIndex = 1; //return to the first slide
@@ -36,6 +37,7 @@ window.addEventListener("DOMContentLoaded", (e) => {
       }
       for (let control of controls) {
         control.style.color = "white";
+        control.style.backgroundColor = "rgba(224, 224, 224, 0.3)";
       }
     }
   };
@@ -70,11 +72,9 @@ window.addEventListener("DOMContentLoaded", (e) => {
   });
 
   showSlides(slideIndex); //initial render
-  // setInterval(() => {
-  //   // automatic slides
-  //   slideIndex++;
-  //   showSlides(slideIndex);
-  // }, 7000);
+  //
+  // carousel logic ends
+  //
 
   //
   /// nav menu ///
@@ -109,4 +109,8 @@ window.addEventListener("DOMContentLoaded", (e) => {
       }
     });
   });
+
+  //
+  // nav menu ends
+  //
 });

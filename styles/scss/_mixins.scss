@@ -9,18 +9,20 @@
   width: 50%;
   height: 3em;
   padding: 0.7em;
-  margin-top: 4em;
+  margin-top: 3em;
   border-radius: 4px;
   background-color: $primary-color;
   font-family: $text-family;
   box-shadow: 0px 10px 10px $button-shadow;
+  cursor: pointer;
 
-  @include mq(768px) {
+  @include mq(600px) {
     font-size: 1.2rem;
   }
 
-  @include mq(1440px) {
+  @include mq(1024px) {
     width: 17em;
+    margin-top: 5em;
   }
 }
 
@@ -40,16 +42,17 @@
   height: 37.5em;
   color: $white;
 
-  @include mq(768px) {
+  @include mq(600px) {
     height: 56em;
   }
 
   h3 {
     font-family: $header-family;
+    font-size: 1.5rem;
     font-weight: 2rem;
     margin-bottom: 1rem;
 
-    @include mq(768px) {
+    @include mq(600px) {
       font-size: 3.8rem;
       line-height: 73px;
     }
@@ -58,22 +61,30 @@
   .carousel-text {
     display: inline-block;
     position: relative;
-    top: -23em;
+    top: -25em;
     text-align: center;
     font-family: $text-family;
     padding: 5%;
     line-height: 1.2em;
 
-    @include mq(768px) {
+    @include mq(600px) {
       margin: 0 5em 0;
       padding: 2em;
-      top: -32em;
+      top: -35em;
+    }
+
+    @include mq(1024px) {
+      top: -40em;
     }
   }
 
   p {
     @include mq(1024px) {
-      padding: 0 15em;
+      padding: 0 10em;
+    }
+
+    @include mq(1024px) {
+      padding: 0 17em;
     }
   }
 
@@ -82,43 +93,17 @@
     height: 600px;
     object-fit: cover;
 
-    @include mq(768px) {
+    @include mq(600px) {
+      height: 784px;
+    }
+
+    @include mq(1024px) {
       height: 900px;
     }
   }
 
   .carousel-button {
     @include button;
-  }
-
-  .donate-button {
-    position: absolute;
-    top: 4em;
-    right: 0;
-
-    @include button;
-    text-align: center;
-    writing-mode: vertical-lr;
-    transform: scale(-1, -1);
-    width: 3em;
-    height: 23%;
-    color: $white;
-
-    img {
-      height: 18%;
-      position: relative;
-      top: -0.5rem;
-      transform: rotate(90deg);
-    }
-
-    @include mq(768px) {
-      width: 4em;
-      height: 13em;
-
-      img {
-        top: -1.2em;
-      }
-    }
   }
 }
 
@@ -131,11 +116,11 @@
     img {
       grid-column: 2 / span 1;
       width: 100%;
-      padding: 20% 15% 20% 10%;
+      padding: 20% 15% 25% 10%;
     }
 
     .carousel-text {
-      top: -40em;
+      top: -45em;
       text-align: left;
       h3 {
         font-size: 4rem;
@@ -160,16 +145,20 @@
     height: 0px;
   }
 
-  @include mq(1440px) {
+  @include mq(1024px) {
     padding: 5%;
   }
 
   .section-content {
-    @include mq(1440px) {
+    @include mq(600px) {
       display: grid;
-      grid-template-columns: repeat(3, 41%);
+      grid-template-columns: repeat(3, 50%);
       column-gap: 4%;
       overflow-x: scroll;
+    }
+
+    @include mq(1024px) {
+      grid-template-columns: repeat(3, 41%);
     }
   }
 
@@ -187,14 +176,14 @@
     text-align: center;
     margin: 3.5rem auto 3rem;
 
-    @include mq(1440px) {
+    @include mq(1024px) {
       font-size: 3rem;
     }
   }
 
   h3 {
     font-family: $header-family;
-    @include mq(1440px) {
+    @include mq(1024px) {
       font-size: 1.9rem;
     }
   }
