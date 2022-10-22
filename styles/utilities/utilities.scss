@@ -1,0 +1,47 @@
+@import "./index.scss";
+
+.bold {
+  font-weight: 700;
+  color: $dark-text;
+}
+
+.large-text {
+  font-size: 25px;
+  line-height: 35px;
+}
+
+.medium-text {
+  font-size: 20px;
+  line-height: 28px;
+}
+
+.normal-text {
+  font-size: 16px;
+  line-height: 22.4px;
+}
+.small-text {
+  font-size: 14px;
+  line-height: 19.6px;
+}
+
+.flex-btw {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.flex-start {
+  display: flex;
+  align-items: center;
+  justify-content: flex-start;
+}
+
+.flex-end {
+  display: flex;
+  align-items: center;
+  justify-content: flex-end;
+}
+
+.hide {
+  display: none;
+}

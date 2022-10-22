@@ -1,0 +1,149 @@
+@import "styles/utilities";
+
+.header {
+  height: 3.625rem;
+  width: 100%;
+  padding: 1rem;
+  position: sticky;
+  top: 0;
+  background: $white-bg;
+  z-index: 1;
+
+  @include tablet {
+    height: 7.1rem;
+    padding: 2rem 5rem 2rem;
+  }
+
+  @include laptop {
+    height: 7.5rem;
+    padding: 1rem;
+  }
+
+  @include large {
+    padding: 2rem 5rem 2rem;
+  }
+}
+
+.logo {
+  gap: 0.2rem;
+
+  @include tablet {
+    gap: 0.9rem;
+  }
+}
+
+.headerLogo {
+  @include tablet {
+    width: 49px;
+    height: 49px;
+  }
+}
+
+.logo p {
+  width: 6ch;
+  font-size: 0.5rem;
+  line-height: 0.6rem;
+
+  @include tablet {
+    width: 75%;
+    font-size: 0.95rem;
+    line-height: 21px;
+  }
+  @include laptop {
+    width: 22ch;
+  }
+
+  @include large {
+    width: 75%;
+  }
+}
+
+.navList {
+  position: absolute;
+  top: 3.625rem;
+  width: 100%;
+  height: 100vh;
+  left: 0;
+  background: $modal-bg;
+
+  @include tablet {
+    top: 7.1rem;
+  }
+
+  @include laptop {
+    background: $white-bg;
+    position: relative;
+    width: fit-content;
+    height: auto;
+    top: unset;
+  }
+}
+
+.navList > ul {
+  background: $white-bg;
+  width: 67%;
+  height: 100%;
+  padding: 1.56rem;
+  @include drop;
+
+  @include tablet {
+    width: 54%;
+    padding: 3.03rem 4.24rem 3.03rem;
+  }
+
+  @include laptop {
+    width: unset;
+    padding: 0;
+
+    & > div {
+      display: inline-block;
+    }
+  }
+}
+
+.ctg {
+  margin: 2rem 0 2rem;
+
+  @include laptop {
+    margin: 0 0.4rem 0;
+  }
+
+  @include large {
+    margin: 0 0.9rem 0;
+  }
+}
+
+.title {
+  cursor: pointer;
+  width: fit-content;
+  gap: 0.4rem;
+  color: $dark-text;
+
+  svg {
+    color: $dark-text;
+  }
+}
+
+.tabList {
+  background: $primary-light;
+  padding: 1rem 0.5rem 1rem 1.6rem;
+  margin-top: 1rem;
+  @include drop;
+
+  @include laptop {
+    position: absolute;
+    top: 2rem;
+    min-width: 17.25rem;
+    box-shadow: 0px 16px 36px $shadow;
+  }
+}
+
+.tabList > li {
+  padding: 1rem 0 1rem;
+  font-size: 14px;
+  color: $dark-text-3;
+
+  @include tablet {
+    font-size: 1rem;
+  }
+}

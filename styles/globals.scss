@@ -1,0 +1,57 @@
+@import "./utilities/index.scss";
+
+* {
+  box-sizing: border-box;
+  padding: 0;
+  margin: 0;
+}
+
+html,
+body {
+  font-family: "Inter", sans-serif;
+  font-weight: 500;
+  color: $light-text;
+  width: 100%;
+  height: 100%;
+
+  @include customVerticalScroll;
+}
+
+.content {
+  max-width: 1800px;
+  height: 100%;
+  margin: 0 auto;
+}
+
+h1 {
+  font-family: "Hind", sans-serif;
+  font-size: 3.9rem;
+  line-height: 73.2px;
+  color: $dark-text;
+}
+
+h2 {
+  font-family: "Hind", sans-serif;
+  font-size: 3rem;
+  line-height: 57.6px;
+  color: $dark-text;
+}
+
+a {
+  color: $dark-text-3;
+  text-decoration: none;
+  cursor: pointer;
+}
+
+li {
+  list-style-type: none;
+}
+
+svg {
+  color: $primary;
+}
+
+main {
+  min-height: 70vh;
+  background-color: $main-bg;
+}

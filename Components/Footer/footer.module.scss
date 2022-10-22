@@ -1,0 +1,162 @@
+@import "styles/utilities/index";
+
+.subscribe {
+  padding: 2.5rem 1rem 2.5rem;
+  background: $comp-bg;
+
+  @include tablet {
+    padding: 3rem 5rem 3rem;
+    gap: 10%;
+  }
+}
+
+.cta {
+  margin: 0.5rem 0 1rem;
+  text-align: center;
+
+  @include tablet {
+    text-align: left;
+  }
+}
+
+.ctaHead {
+  font-size: 18px;
+  margin-bottom: 1rem;
+}
+
+.form {
+  input,
+  .btn {
+    width: 100%;
+    font-size: 1rem;
+  }
+
+  input {
+    font-family: $body-family;
+    padding: 10px 14px 10px;
+    outline: none;
+    border: 1px solid $dark-border;
+    border-radius: 0.5rem;
+    margin: 1rem 0 1rem;
+
+    @include tablet {
+      width: 17.5rem;
+    }
+  }
+
+  .btn {
+    @include tablet {
+      width: 7.13rem;
+    }
+  }
+
+  @include tablet {
+    gap: 1rem;
+    align-self: flex-start;
+  }
+}
+
+.footer {
+  background: $primary-light;
+  padding: 3.3rem 1rem 3rem;
+
+  @include tablet {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(330px, 1fr));
+    justify-content: space-between;
+    row-gap: 6.9rem;
+    padding: 4.7rem 3rem 3rem 5rem;
+  }
+
+  @include laptop {
+    grid-template-columns: 40% 25% 25%;
+    column-gap: 3%;
+  }
+}
+
+.logoName {
+  gap: 0.75rem;
+  margin-bottom: 2.3rem;
+}
+
+.logo {
+  width: 42px;
+  height: 42px;
+
+  @include tablet {
+    width: 60px;
+    height: 60px;
+  }
+}
+
+.name {
+  font-size: 12px;
+  width: 22ch;
+
+  @include tablet {
+    font-size: 15px;
+    width: 24ch;
+  }
+}
+
+.quickLinks {
+  margin-top: 3rem;
+  ul {
+    width: fit-content;
+    margin-top: 1rem;
+    display: grid;
+    grid-template-columns: 45% 45%;
+    column-gap: 3.3rem;
+  }
+
+  li {
+    margin: 6px 0 6px;
+  }
+
+  @include tablet {
+    margin: 0;
+  }
+}
+
+.location {
+  margin-top: 2.625rem;
+  width: 11.5rem;
+
+  .loc {
+    margin-top: 0.75rem;
+    color: $dark-text;
+    line-height: 20px;
+  }
+
+  @include tablet {
+    margin-top: 0;
+  }
+}
+
+.socials {
+  margin: 5rem 0 1.5rem;
+
+  a {
+    margin-right: 1.5rem;
+  }
+
+  @include tablet {
+    grid-column: 2 / span 1;
+    margin: 0;
+  }
+
+  @include laptop {
+    grid-column: 3 / span 1;
+    margin-left: 4rem;
+  }
+}
+
+.copy {
+  grid-row: 3 / span 1;
+  @include tablet {
+    font-size: 1rem;
+  }
+  @include laptop {
+    grid-row: 2 / span 1;
+  }
+}

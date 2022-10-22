@@ -1,0 +1,14 @@
+@import "styles/utilities/index";
+
+.button {
+  font-family: $body-family;
+  background-color: $primary;
+  font-size: 1rem;
+  color: $white-bg;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  outline: none;
+  border: none;
+  border-radius: 0.5rem;
+  box-shadow: 0px 1px 2px $shadow;
+}

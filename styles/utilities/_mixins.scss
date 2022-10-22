@@ -1,0 +1,70 @@
+@mixin tablet {
+  @media screen and (min-width: 768px) {
+    @content;
+  }
+}
+
+@mixin laptop {
+  @media screen and (min-width: 1024px) {
+    @content;
+  }
+}
+
+@mixin large {
+  @media screen and (min-width: 1400px) {
+    @content;
+  }
+}
+
+@mixin customVerticalScroll {
+  scrollbar-gutter: stable both-edges;
+
+  &::-webkit-scrollbar {
+    width: 8px;
+    height: 3px;
+  }
+
+  &::-webkit-scrollbar-track {
+    background: $main-bg;
+  }
+
+  &::-webkit-scrollbar-thumb {
+    background: $primary;
+    border-radius: 8px;
+
+    &:hover {
+      background: $primary-deep;
+    }
+  }
+}
+
+@mixin drop {
+  @keyframes drop {
+    from {
+      opacity: 0;
+      transform: translateY(-10vh);
+    }
+    to {
+      opacity: 1;
+      transform: translateY(unset);
+    }
+  }
+
+  animation: drop 0.5s ease-in-out;
+}
+
+@mixin animateHide {
+  @keyframes hide {
+    from {
+      opacity: 1;
+    }
+
+    to {
+      opacity: 0;
+      transform: translateY(-10vh);
+      display: none;
+    }
+  }
+
+  animation: hide 1s ease-in-out;
+}
